@@ -1,7 +1,7 @@
 pipeline {
   agent {
     node {
-      lable master
+      lable 'master'
       tools {
         maven 'maven3'
       }
