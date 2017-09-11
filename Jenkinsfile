@@ -4,14 +4,7 @@ pipeline {
       label 'master'
       tools {
         maven ' maven3.3.3'
-      }
-      script {
-        def javaHome = tool 'java8'
-        def sonarqubeHome = tool ' sonar@10.102.22.59'
-        def scannerHome = tool ''
-
-        def sonarqubeName = ' sonar@10.102.22.59'
-      }
+      }      
     }
   }
   options {
@@ -20,8 +13,15 @@ pipeline {
   stages {
 
     stage('Stage') {
+      
       steps {
+        script {
+        def javaHome = tool 'java8'
+        def sonarqubeHome = tool ' sonar@10.102.22.59'
+        def scannerHome = tool ''
 
+        def sonarqubeName = ' sonar@10.102.22.59'
+      }
         echo '****************************************************'
         echo 'Running Step Compile (Maven)'
         echo '****************************************************'
