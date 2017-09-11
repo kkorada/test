@@ -1,12 +1,12 @@
 pipeline {
   agent {
     node {
-      label 'master'
-      tools {
-        maven ' maven3.3.3'
-      }      
+      label 'master'           
     }
   }
+  tools {
+        maven ' maven3.3.3'
+      } 
   options {
     buildDiscarder(logRotator(numToKeepStr:'10'))
   }
