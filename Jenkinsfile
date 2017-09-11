@@ -6,12 +6,13 @@ pipeline {
       }
     }
   }
-        def javaHome = tool 'java8'
+        
+  stages {
+    def javaHome = tool 'java8'
       def sonarqubeHome = tool 'sonarqube@59'
       def scannerHome = tool 'sonar-scanner2.8'
 
       def sonarqubeName = 'sonarqube@59'
-  stages {
     
     stage('Commit Stage') {
       steps {
