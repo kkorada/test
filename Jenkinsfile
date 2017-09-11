@@ -1,15 +1,12 @@
 pipeline {
   agent {
-    def javaHome = tool 'java8'
-      def sonarqubeHome = tool 'sonarqube@59'
-      def scannerHome = tool 'sonar-scanner2.8'
-
-      def sonarqubeName = 'sonarqube@59'
-    node { lable 'master'
-      tools {
-        maven 'maven3'
-      }
+    node { 
+      lable 'master'
     }
+  }
+  
+  tools {
+        maven 'maven3'
   }
         
   stages {
