@@ -17,10 +17,13 @@ pipeline {
         echo '****************************************************'
         echo 'Running Step Compile (Maven)'
         echo '****************************************************'
-        if (isUnix()) {
-          sh 'mvn clean compile install  -Dmaven.test.skip=true '
-        } else {
-          bat 'mvn clean compile install'
+
+        script {
+          if (isUnix()) {
+            sh 'mvn clean compile install  -Dmaven.test.skip=true '
+          } else {
+            bat 'mvn clean compile install'
+          }
         }
 
         echo '****************************************************'
