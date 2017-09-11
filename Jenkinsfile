@@ -2,6 +2,7 @@ pipeline {
   agent {
     node { 
       label 'master'
+      def asd = 'asa'
     }
   }
   
