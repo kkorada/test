@@ -1,7 +1,7 @@
 pipeline {
   agent {
     node { 
-      lable 'master'
+      label 'master'
     }
   }
   
@@ -17,10 +17,12 @@ pipeline {
         echo '****************************************************'
         echo 'Running Step Compile (Maven)'
         echo '****************************************************'
-        if (isUnix())
+        if (isUnix()) {
           sh 'mvn clean compile install  -Dmaven.test.skip=true '
-        else
+        } else {
           bat 'mvn clean compile install'
+        }
+
         echo '****************************************************'
         echo 'End of Step Compile (Maven)'
         echo '****************************************************'
